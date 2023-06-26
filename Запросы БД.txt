@@ -1,0 +1,32 @@
+db.visits.insert({
+	"fio_id":"",
+	"date":"01.01.2000",
+	"face_model_data":"",
+	"mathModel1_data":[{
+		"rigidity":"50,50,50",
+		"excitability":"30,30,30",
+		"contractility":"10,10,10"
+	}],
+	"mathModel2_data":[{
+		"refractoriness":"50,50,50",
+		"conductivity":"30,30,30"
+	}]	
+})
+
+db.patients.insertOne({
+	"fio":"Довгаль Никита Анатольевич",
+	"gender":"Ж",
+	"weight":"80 кг",
+	"height":"180 см",
+	"snils":"400 321 214-19",
+	"birthday":"10.12.2002",
+	"passport_data":"0317 121212",
+	"img":""
+})
+
+db.createCollection("status")
+
+db.status.insertOne({
+	"_id":0,
+	"individuals_fio":""
+})

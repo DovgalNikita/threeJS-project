@@ -1,0 +1,144 @@
+<html>
+   <head>
+        <title>Диагностика</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/diagnostic.css">
+        <script type="text/javascript" src="js/chart.js"></script>
+        <script src="js/jquery-3.6.1.js"></script>
+       <script type="text/javascript" src="eel.js"></script>
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "/js/diagnostic/three.module.js",
+                    "OrbitControls": "/js/diagnostic/OrbitControls.js"
+                }
+            }
+        </script>
+        
+   </head>
+   <body>
+        <div class="burger_block">
+            <div class="burger">
+                <div></div>
+            </div>
+        </div>
+
+
+        <div class="menu_block">
+
+            <div class="exit_burger">
+                <div></div>
+            </div>
+
+            <div class="session_block">
+                <div class="info_block">
+                    <div class="fio">Малова Н.А.</div>
+                    <div class="position">(врач)</div>
+                </div>
+                <div class="session_exit" onclick="window.location.href='authorization.html'"></div>
+            </div>
+
+            <ul>
+                <li>Меню</li>
+                <li><a href="diagnostic.html">Главная</a></li>
+                <li><a href="patients.html">Пациенты</a></li>
+                <li><a href="">Поддержка</a></li>
+                <li><a href="">О разработчике</a></li>
+            </ul>
+
+            <div class="footer_block">
+                <div class="div">Версия 1.0.0</div>
+                <div class="div">ООО "Мед-Центр"</div>
+                <div class="div">номер лицензии NK-11233455/44</div>
+            </div>
+        </div>
+        
+
+        <div class="block_title">
+            <div class="title">Диагностика</div>
+        </div>
+        <div class="patient_block">
+            <div class="content">
+                <div class="id_patient">Пациент: Болотов Е.Ю.</div>
+                <div class="date">Дата: 03.03.2023</div>
+            </div>
+        </div>
+
+        <div class="frameStatistic">
+            <div class="title">Статистика</div>
+            <div class="ul_block">
+                <ul class="parametrs">
+                    <li id="">Ригидность: 0.5</li>
+                    <li id="">Эластичность: 5</li>
+                    <li id="">Эластичность: 22</li>
+                    <li id="">Возбудимость: 0.1</li>
+                    <li id="">Проводимость: 11</li>
+                    <li id="">Сократимость: 0.56</li>
+                    <li id="">Растяжимость: 0.43</li>
+                    <li id="">Рефрактерность: 10</li>
+                </ul>
+                <ul class="parametrs">
+                    <li id="">Ригидность: 0.5</li>
+                    <li id="">Эластичность: 5</li>
+                    <li id="">Эластичность: 22</li>
+                    <li id="">Возбудимость: 0.1</li>
+                    <li id="">Проводимость: 11</li>
+                    <li id="">Сократимость: 0.56</li>
+                    <li id="">Растяжимость: 0.43</li>
+                    <li id="">Рефрактерность: 10</li>
+                </ul>
+                <ul class="parametrs">
+                    <li id="">Ригидность: 0.5</li>
+                    <li id="">Эластичность: 5</li>
+                    <li id="">Эластичность: 22</li>
+                    <li id="">Возбудимость: 0.1</li>
+                    <li id="">Проводимость: 11</li>
+                    <li id="">Сократимость: 0.56</li>
+                    <li id="">Растяжимость: 0.43</li>
+                    <li id="">Рефрактерность: 10</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="frameModels">
+            <div class="models">
+                <div class="faceModel">
+                    <div>Физиомодель лица</div>
+                </div>
+                <div class="mathModels">
+                    <div class="mathModel_1">
+                        <canvas id="mathModel_1" height="130%"></canvas>
+                        <div>Состояние тонуса мышц</div>
+                    </div>
+                    <div class="mathModel_2">
+                        <canvas id="mathModel_2" height="130%"></canvas>
+                        <div>Степень отклонения</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="backgroundRectangle">
+            <div class="analize_block">
+                <div class="title">Анализ</div>
+                <div class="content">
+                    В ходе анализа были выявлено тоническое напряжение мышц,
+                    возникающее в ответа на болевое раздражаение. Каждое локальное болевое 
+                    раздражение вызывает спинальный сенсомоторный рефлекс в соответствующем 
+                    ему сегменте спинного мозга, сопровождающийся активацией мотонейронов, 
+                    что, в свою очередь, приводит к спазму мышц, иннервируемых этими нейронами. 
+                    Физиологическая обоснованность напряжения мышц, которое следует за любой болью,
+                    заключается в иммобилизации пораженного участка тела, создании мышечного корсета. 
+                </div>
+            </div>
+            <div class="buttons_block">
+                <button class="test">Тест</buttton>
+                <button class="complete">Завершить</buttton>
+                <button class="start">Запуск</buttton>
+            </div>
+        </div>
+
+        <script src="js/diagnostic/mathModels.js"></script>
+        <script type="module" src="js/diagnostic/faceModel.js"></script>
+        <script src="js/diagnostic/diagnostic.js"></script>
+   </body>
+</html>

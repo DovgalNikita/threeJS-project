@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>Личное дело</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/individuals.css">
+        <script type="text/javascript" src="js/chart.js"></script>
+        <script src="js/jquery-3.6.1.js"></script>
+        <script type="text/javascript" src="eel.js"></script>
+    </head>
+    <body>
+        <div class="burger_block">
+            <div class="burger">
+                <div></div>
+            </div>
+        </div>
+
+
+        <div class="menu_block">
+
+            <div class="exit_burger">
+                <div></div>
+            </div>
+
+            <div class="session_block">
+                <div class="info_block">
+                    <div class="fio">Малова Н.А.</div>
+                    <div class="position">(врач)</div>
+                </div>
+                <div class="session_exit" onclick="window.location.href='authorization.html'"></div>
+            </div>
+
+            <ul>
+                <li>Меню</li>
+                <li><a href="diagnostic.html">Главная</a></li>
+                <li><a href="patients.html">Пациенты</a></li>
+                <li><a href="">Поддержка</a></li>
+                <li><a href="">О разработчике</a></li>
+            </ul>
+
+            <div class="footer_block">
+                <div class="div">Версия 1.0.0</div>
+                <div class="div">ООО "Мед-Центр"</div>
+                <div class="div">номер лицензии NK-11233455/44</div>
+            </div>
+        </div>
+
+        
+
+        <div class="title">Личное дело</div>
+
+        <div class="content">
+            <div class="leftColumn">
+                <div class="data_patient_block">
+                    <div class="title-data_patient_block">Данные пациента</div>
+                    <div class="data_patient_content">
+                        <div class="avatar" id="avatar"><img src="img/individuals/person.png" alt=""></div>
+                        <div class="middle_column">
+                            <div class="fio"> <div>ФИО:</div> <div id="fio_input"></div> </div>
+                            <div class="gender"> <div>Пол:</div> <div id="gender_input"></div> </div>
+                            <div class="weight"> <div>Вес:</div> <div id="weight_input"></div> </div>
+                            <div class="height"> <div>Рост:</div> <div id="height_input"></div> </div>
+                            <div class="snils"> <div>Снилс:</div> <div id="snils_input"></div> </div>
+                            <div class="birthday"> <div>Дата рождения:</div> <div id="birthday_input"></div> </div>
+                            <div class="pass_data"> <div>Паспортные данные:</div> <div id="passport_data_input"></div> </div>
+                        </div>
+                        <div class="last_column">
+                            <div class="identify_cards">
+                                <div class="snils_card"></div>
+                                <div class="pass_card"></div>
+                                <div alt="" class="med_card"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="visits_block">
+                    <div class="title-visits_block">Посещения</div>
+                    <div class="content">
+                        <img src="img/individuals/previous_slide.png" alt="" class="previous_slide">
+                        <div class="visit_card_block">
+                            <div class="visit_card_line">
+                                <div class="card_block">
+                                    <img class="visit_card_img" src="img/individuals/visit_card_img.png">
+                                    <div class="visit_date">01/01/2002</div>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                        <img src="img/individuals/next_slide.png" alt="" class="next_slide">
+                    </div>
+                </div>
+            </div> 
+    
+            <div class="rightColumn">
+                <div class="title-rightColumn">Статистика</div>
+                <canvas id ="pieChart" class="pieChart"></canvas>
+            </div>
+        </div>
+        
+        <script src="js/individuals/mathModel.js"></script>
+        <script src="js/individuals/individuals.js"></script>
+    </body>
+</html>

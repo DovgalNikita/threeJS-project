@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>Пациенты</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/patients.css">
+        <script src="js/jquery-3.6.1.js"></script>
+        <script type="text/javascript" src="eel.js"></script>
+    </head>
+    <body>
+
+        <div class="burger_block">
+            <div class="burger">
+                <div></div>
+            </div>
+        </div>
+
+        <div class="menu_block">
+
+            <div class="exit_burger">
+                <div></div>
+            </div>
+
+            <div class="session_block">
+                <div class="info_block">
+                    <div class="fio">Малова Н.А.</div>
+                    <div class="position">(врач)</div>
+                </div>
+                <div class="session_exit" onclick="window.location.href='authorization.html'"></div>
+            </div>
+
+            <ul>
+                <li>Меню</li>
+                <li><a href="diagnostic.html">Главная</a></li>
+                <li><a href="patients.html">Пациенты</a></li>
+                <li><a href="">Поддержка</a></li>
+                <li><a href="">О разработчике</a></li>
+            </ul>
+
+            <div class="footer_block">
+                <div class="div">Версия 1.0.0</div>
+                <div class="div">ООО "Мед-Центр"</div>
+                <div class="div">номер лицензии NK-11233455/44</div>
+            </div>
+        </div>
+
+        
+        <div class="search_patient_block">
+            <div class="search_bar">
+                <div class="loupe"></div>
+                <input type="text" placeholder="Поиск пациента">
+            </div>
+        </div>
+
+        <div class="title">Пациенты</div>
+
+
+        <div class="content">
+        
+            <div class="avatar_block">
+
+                <img class="avatar_person" src="img/patients/avatar_person.png" alt="">
+
+                <div class="avatar_caption">
+                    <div class="avatar_fio_block">
+                        <div class="caption">ФИО:</div>
+                        <div class="value"></div>
+                    </div>
+                    <div class="birthday_block">
+                        <div class="caption">Дата рождения:</div>
+                        <div class="value"></div>
+                    </div> 
+                    <div class="gender_block">
+                        <div class="caption">Пол:</div>
+                        <div class="value"></div>
+                    </div>
+                    <div class="passport_block">
+                        <div class="caption">Паспорт:</div>
+                        <div class="value"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="records_block">
+
+            </div>
+
+           
+
+
+        </div>
+        <script src="js/patients/patients.js"></script>
+    </body>
+</html>

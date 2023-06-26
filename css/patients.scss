@@ -1,0 +1,482 @@
+//-_-_-_-_-_-_-_-_-_-_-_-_Setup-_-_-_-_-_-_-_-_-_-_-_-_
+@font-face {
+    font-family: 'OpenSans-Medium';
+    src: url(../fonts/OpenSans-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'OpenSans-SemiBold';
+    src: url(../fonts/OpenSans-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url(../fonts/OpenSans-Bold.ttf);
+}
+
+$sizeFont:70px;
+$newWhite:rgb(230,230,230);
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: space-evenly;
+    margin: 0;
+    background-color: rgb(16, 19, 27);
+}
+//-_-_-_-_-_-_-_-_-_-_-_-_burger_block-_-_-_-_-_-_-_-_-_-_-_-_
+.burger_block{
+    position:fixed;
+    top:70px;
+    left:0;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    width:140px;
+    height:80px;
+    border-radius:0 20px 20px 0;
+    background-color:rgb(11,13,17);
+    transition:.5s;
+    z-index:2;
+    
+    &.active{
+        left:-50%;
+    }
+
+    .burger{
+        position:relative;
+        width:60px;
+        height:48px;
+        margin-right:20%;
+        cursor:pointer;
+
+        $height-lineB:3px;
+        >div{
+            position: relative;
+            top:calc(50% - #{$height-lineB/2});
+            width:100%;
+            height:$height-lineB;
+            background-color:$newWhite;
+            
+            &::before{
+                content:'';
+                position:absolute;
+                width:100%;
+                height:$height-lineB;
+                background-color:$newWhite;
+                bottom:15px;
+            }
+
+            &::after{
+                content:'';
+                position:absolute;
+                width:100%;
+                height:$height-lineB;
+                background-color:$newWhite;
+                top:15px;
+            }
+        }
+    }
+}
+
+//-_-_-_-_-_-_-_-_-_-_-_-_menu_block-_-_-_-_-_-_-_-_-_-_-_-_
+.menu_block{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    position:absolute;
+    left:-50%;
+    width:20%;
+    height:100%;
+    background-color:rgb(11,13,17);
+    transition: 1s;
+    z-index:1;
+
+    &.active{
+        left:0;
+    }
+    
+    .exit_burger{
+        position:absolute;
+        top:85px;
+        right:20px;
+        width:60px;
+        height:48px;
+        cursor:pointer;
+
+        $height-lineB:3px;
+        div{
+            position:relative;
+            width:calc(sqrt(sqrt(60px) + sqrt(48px)));
+            height:$height-lineB;
+            top:calc(50% - #{$height-lineB});
+            
+
+            &::before{
+                content:'';
+                position:absolute;
+                transform: rotate(45deg);
+                transform-origin: center;
+                width:100%;
+                height:100%;
+                background-color:$newWhite;
+                transition: all .5s;
+            }
+
+            &::after{
+                content:'';
+                position:absolute;
+                transform: rotate(-45deg);
+                transform-origin: center;
+                width:100%;
+                height:100%;
+                background-color:$newWhite;
+                transition: all .5s;
+            }
+
+
+            &.active{
+                &::before{
+                    top:calc(50% - #{$height-lineB});
+                    transform: rotate(0); 
+                }
+    
+                &::after{
+                    top:calc(50% - #{$height-lineB});
+                    transform: rotate(0);  
+                }
+            }
+
+            &.pas{
+                &::before{
+                    top:-15px;
+                }
+    
+                &::after{
+                    top:15px;
+                }
+            }         
+        }
+    }
+
+    .session_block{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position:absolute;
+        top:50px;
+        left:50px;
+        width:45%;
+        height:5%;
+        border-radius:20px;
+        background:$newWhite;
+        border:1px solid $newWhite;
+
+        .info_block{
+            display:flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: center;
+            width:70%;
+            height:100%;
+            border-radius:20px;
+            background:rgb(18,19,32);
+
+            >div{
+                line-height:$sizeFont/5;
+                font-size: $sizeFont/5;
+                font-family: 'OpenSans-SemiBold';
+                color:$newWhite;
+            }
+        }
+
+        .session_exit{
+            width:30px;
+            height:30px;
+            background:url('../img/patients/session_exit.png') no-repeat;
+            background-size: 100%;
+            margin-right:8%;
+            cursor:pointer;
+        }
+    }
+
+
+    ul{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width:60%;
+        height:25%;
+        list-style-type: none;
+        margin:0;
+        padding:0;
+
+        >li{
+            text-align: center;
+            width:100%;
+            line-height:$sizeFont*2/4;
+            font-size: $sizeFont*2/4;
+            font-family: 'OpenSans-SemiBold';
+            color:$newWhite;
+        }
+
+        a{
+            color:$newWhite;
+            line-height:$sizeFont*2/6;
+            font-size: $sizeFont*2/6;
+            font-family: 'Arial';
+            text-decoration: none;
+            font-weight: 100;
+        }
+    }
+
+    .footer_block{
+        position:absolute;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width:fit-content;
+        height:50px;
+        bottom:35px;
+
+        >div{
+            color:$newWhite;
+            line-height:$sizeFont/5;
+            font-size: $sizeFont/5;
+            font-family: 'Arial';
+        }
+    }
+}
+
+//-_-_-_-_-_-_-_-_-_-_-_-_Title-_-_-_-_-_-_-_-_-_-_-_-_
+.title{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    height:80px;
+    margin-top:70px;
+    text-align:center;
+    line-height:$sizeFont;
+    font-size: $sizeFont*0.9;
+    font-family: 'OpenSans-Bold';
+    color:$newWhite;
+    background-color:rgb(35,41,65);
+}
+
+//-_-_-_-_-_-_-_-_-_-_-_-_search_patient_block-_-_-_-_-_-_-_-_-_-_-_-_
+.search_patient_block{
+    position:absolute;
+    display:flex;
+    align-items: center;
+    top:70px;
+    width:100%;
+    height:80px;
+   
+
+    .search_bar{
+        display:flex;
+        align-items: center;
+        justify-content: flex-start;
+        position:absolute;
+        right:0;
+        width:500px;
+        height:60px;
+        border-radius:20px 0 0 20px;
+        background-color:rgb(16,18,24);
+        z-index:2;
+
+        .loupe{
+            width:40px;
+            height:40px;
+            margin-left:20px;
+            background:url('../img/patients/loupe.png') no-repeat;
+        }
+
+        input{
+            width:360px;
+            height:40px;
+            margin-left:20px;
+            border-radius:10px;
+            line-height:$sizeFont/3;
+            font-size: $sizeFont/3;
+            font-family: 'OpenSans-Bold';
+            padding-left:20px;
+            border:0;
+            background-color:$newWhite;
+        }
+    }
+}
+
+//-_-_-_-_-_-_-_-_-_-_-_-_Content-_-_-_-_-_-_-_-_-_-_-_-_
+.content{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    width:100%;
+    min-height:750px;
+    background-color:rgb(35,41,65);
+    margin-top:35px;
+    overflow:hidden;
+
+
+    .avatar_block{
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-top:35px;
+        width:30%;
+        height:680px;
+        background-color:rgb(16,18,24);
+        border-radius:20px;
+
+        .avatar_person{
+            width:50%;
+            height:50%;
+            background-position: center;
+            background-size:90%;
+            border-radius:20px;
+        }
+
+        .avatar_caption{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            width:100%;
+            height:30%;
+            line-height:$sizeFont/4;
+            font-size: $sizeFont/4;
+            font-family: 'OpenSans-SemiBold';
+            color:$newWhite;
+
+            >div{
+                width:70%;
+                display:flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                margin-left:20%;
+
+                >div:first-child{
+                    color:gray;
+                    margin-right:10px;
+                }
+            }
+        }
+    }
+
+    .records_block{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width:60%;
+
+
+        .record{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+            height:80px;
+            width: 100%;
+            border-radius:20px;
+            background-color: rgb(16,18,24);
+    
+            &:first-child{
+                margin-top:35px;
+            }
+    
+            &:last-child{
+                margin-bottom:35px;
+            }
+    
+            >div{
+                display:flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: space-between;
+                height:60%;
+                width:15%;
+                color:$newWhite;
+                line-height:$sizeFont.4;
+                font-size: $sizeFont/4;
+                font-family: 'OpenSans-SemiBold';
+    
+                &:first-child{
+                    line-height:$sizeFont*6/10;
+                    font-size: $sizeFont*8/10;
+                    margin-left:50px;
+                    width:10%;
+                }
+
+                &:nth-child(2){
+                    min-width:30%;
+                }
+
+                &:nth-child(4){
+                    
+                    width:10%;
+                }
+    
+                >div:first-child{
+                    color:gray;
+                }
+                
+    
+                &:last-child{
+                    width:10%;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    margin-right:50px;
+    
+                    >div{
+                        width:25px;
+                        height:30px;
+                    }
+    
+                    .enter{
+                        background: url('../img/patients/enter.png') no-repeat;
+                        background-size:90%;
+                        background-position: center;
+                        cursor:pointer;
+                        
+                        &:hover{
+                            background-size:100%;
+                        }
+                    }
+    
+                    .change{
+                        background: url('../img/patients/change.png') no-repeat;
+                        background-size:90%;
+                        background-position: center;
+                        cursor:pointer;
+
+                        &:hover{
+                            background-size:100%;
+                        }
+                    }
+    
+                    .delete{
+                        background: url('../img/patients/delete.png') no-repeat;
+                        background-size:90%;
+                        background-position: center;
+                        cursor:pointer;
+
+                        &:hover{
+                            background-size:100%;
+                        }
+                    }
+                }
+            }
+        }
+    } 
+}
